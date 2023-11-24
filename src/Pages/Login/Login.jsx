@@ -1,7 +1,10 @@
 import { useForm } from 'react-hook-form';
 import login from '../../assets/Loginpage.png'
+import useAuth from '../../Hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 const Login = () => {
+    const {userLogin,updateUserProfile} = useAuth()
     const {
         register,
         handleSubmit,
@@ -11,6 +14,14 @@ const Login = () => {
 
 
         console.log(data)
+        userLogin(data.email, data.password)
+        .then(result =>{
+            console.log(result.user)
+
+            .catch(err=>{
+                console.log(err);
+            })
+        })
     }
 
 
@@ -40,6 +51,7 @@ const Login = () => {
                         <div>
                             <button type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                         </div>
+                        <h2 className='mt-4'>New to this website? please <Link className='text-blue-800 font-bold hover:underline' to='/register'>Register</Link> </h2>
                     </form>
 
                 </div>
