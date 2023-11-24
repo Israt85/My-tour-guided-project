@@ -4,13 +4,22 @@ import useAuth from '../../../Hooks/useAuth';
 import { useState } from 'react';
 
 const Navbar = () => {
-    const { user } = useAuth()
+    const { user, userLogOut} = useAuth()
 
     const [isDropdownVisible, setDropdownVisibility] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownVisibility(!isDropdownVisible);
     };
+    const handelLogOut = ()=>{
+        userLogOut()
+        .then(result =>{
+            console.log(result.user);
+        })
+        .catch(err=>{
+            console.log(err);
+        })
+    }
     return (
         <div>
 
@@ -24,31 +33,31 @@ const Navbar = () => {
                         </div>
 
                     </a>
-                    <div className="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <div className="flex items-center md:order-2  rtl:space-x-reverse">
 
 
 
                         {
                             user ? <>
 
-                                <div>
+                                <div className='w-full'>
                                     <button
 
-                                        className="text-white focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                                        className="text-white focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                                         type="button"
                                         onClick={toggleDropdown}
                                     >
-                                        <img src={user.photoURL} alt="" />
+                                        <img className='w-16 h-16 rounded-full' src={user.photoURL} alt="" />
 
 
                                     </button>
 
                                     {isDropdownVisible && (
-                                        <div className="absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                                        <div className="absolute bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 dark:divide-gray-600">
                                             {/* Dropdown content */}
                                             <div className="px-4 py-3 text-sm text-gray-900 dark:text-white">
-                                                <div>Bonnie Green</div>
-                                                <div className="font-medium truncate">name@flowbite.com</div>
+                                                <div>{user.displayName}</div>
+                                                <div className="font-medium truncate">{user.email}</div>
                                             </div>
                                             <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a></li>
@@ -56,7 +65,7 @@ const Navbar = () => {
                                                 <li><a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a></li>
                                             </ul>
                                             <div className="py-2">
-                                                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
+                                                <button onClick={handelLogOut} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log out</button>
                                             </div>
                                         </div>
                                     )}
