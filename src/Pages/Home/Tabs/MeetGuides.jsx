@@ -12,7 +12,8 @@ const MeetGuides = () => {
         })
     },[axiosPublic])
     return (
-        <div className="mx-10">
+        <div className="mx-10 my-10">
+            <h2 className="text-center font-nold text-3xl my-4">Here is Our famous Tour Guides...</h2>
            {
             guides?.map(guide => <div key={guide._id}>
 

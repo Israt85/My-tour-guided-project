@@ -1,0 +1,48 @@
+[
+    {
+      "name": "City Explorer",
+      "img": "https://i.ibb.co/GP4ZcJ0/77.jpg",
+      "tripTitle": "City Exploration Adventure",
+      "price": 2999,
+      "description": "Explore the bustling streets and iconic landmarks of Dhaka, the capital city of Bangladesh. Discover the rich history, vibrant culture, and modern attractions of this dynamic city. From historic sites like Lalbagh Fort to contemporary neighborhoods, experience the energy of urban life in Dhaka.",
+      "location": " Dhaka, the capital city.",
+      "locationDescription": "Dhaka is the capital and largest city of Bangladesh, known for its historical landmarks, cultural richness, and vibrant urban life."
+    },
+    {
+      "name": "Historical Heritage",
+      "img": "https://i.ibb.co/b2KKQ2x/ed1b512f9a204ff9a94343d2150347ab.jpg",
+      "tripTitle": "Journey through History",
+      "price": 2499,
+      "description": "Journey through the historical heritage of Bagerhat, a district in southern Bangladesh known for its ancient civilizations, architectural marvels, and historical landmarks. Immerse yourself in the stories of the past, exploring grand palaces, ancient ruins, and the cultural tapestry that defines Bagerhat.",
+      "location": "Bagerhat, known for the historic Sundarbans and ancient structures.",
+      "locationDescription": "Bagerhat is a district in southern Bangladesh with a rich historical heritage, featuring ancient monuments and landmarks that reflect the region's cultural and architectural significance."
+    },
+    {
+      "name": "Cultural Immersion",
+      "img": "https://i.ibb.co/ysN7d0t/Sreemangal-Tea-Estate-and-Museum.gif",
+      "tripTitle": "Immersive Cultural Experience",
+      "price": 2799,
+      "description": "Immerse yourself in the cultural richness of Srimangal, a town in northeastern Bangladesh known for its tea gardens and biodiversity. Celebrate the diversity of cultures in Bangladesh as you explore vibrant neighborhoods, taste authentic cuisine, and witness traditional performances. Srimangal offers a sensory delight, providing insights into the traditions and customs that shape the region.",
+      "location": "Srimangal, famous for its tea gardens and diverse cultural influences",
+      "locationDescription": "Srimangal is a town in northeastern Bangladesh, famous for its tea gardens, lush landscapes, and diverse cultural experiences."
+    },
+    {
+      "name": "Beach Bliss Retreat",
+      "img": "https://i.ibb.co/kcvTBqx/blogi-JR0-K1s-WVNFzin-GC-l4r3-Ids-VLyx-Zfkr.jpg",
+      "tripTitle": "Beach Paradise Getaway",
+      "price": 3499,
+      "description": "Escape to the blissful beaches of Cox's Bazar, a city and beach resort in southeastern Bangladesh. It is known for having the world's longest natural sea beach, pristine sandy shores, crystal-clear waters, and breathtaking ocean views. Indulge in luxurious beachfront accommodations, water activities, and gourmet seaside cuisine. Whether relaxing under the sun or exploring marine life, Cox's Bazar offers the ultimate beach retreat.",
+      "location": "Cox's Bazar, home to the longest natural sea beach.",
+      "locationDescription": "Cox's Bazar is a city and beach resort in southeastern Bangladesh, renowned for its long and unbroken sandy beach along the Bay of Bengal."
+    },
+    {
+      "name": "Sightseer's Paradise",
+      "img": "https://ibb.co/K6Yp6rN",
+      "tripTitle": "Ultimate Sightseeing Tour",
+      "price": 3199,
+      "description": "Embark on the ultimate sightseeing tour in Sylhet, a northeastern division of Bangladesh known for its picturesque landscapes. Sylhet is a paradise for avid sightseers, offering breathtaking views of tea gardens, natural wonders like Ratargul Swamp Forest, and historical landmarks. Explore the beauty of Sylhet, combining the thrill of exploration with the joy of discovering the stunning landscapes that make it a sightseer's paradise.",
+      "location": "Sylhet, known for its picturesque landscapes and tea gardens.",
+      "locationDescription": "Sylhet is a northeastern division of Bangladesh, celebrated for its scenic landscapes, tea gardens, and notable landmarks like Ratargul Swamp Forest."
+    }
+  ]
+  
