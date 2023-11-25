@@ -5,6 +5,8 @@ import About from '../Pages/About/About';
 import Community from '../Pages/Community/Community';
 import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
+import AllPackage from '../Pages/AllPackage/AllPackage';
+import PackageDetails from './PackageDetails';
 
 const router = createBrowserRouter([
     {
@@ -22,11 +24,18 @@ const router = createBrowserRouter([
         {
             path: '/community',
             element: <Community></Community>
+        },{
+          path: '/allpackage',
+          element: <AllPackage></AllPackage>,
+        },
+        {
+          path: '/tours/:id',
+          element:<PackageDetails></PackageDetails>
         }
       ]
     },
     {
-        path: '/login',
+        path: 'login',
         element: <Login></Login>
     },
     {

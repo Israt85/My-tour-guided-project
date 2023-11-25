@@ -1,9 +1,14 @@
+import Slider from "./Slider/Slider";
+import TouristTab from "./Tabs/TouristTab";
+import TourType from "./TourType/TourType";
 
 
 const Home = () => {
     return (
         <div>
-            <h2>Home</h2>
+            <Slider></Slider>
+            <TouristTab></TouristTab>
+            <TourType></TourType>
         </div>
     );
 };

@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "City Explorer",
+      "img": "https://i.ibb.co/fYmVrCT/cityexplore.jpg",
+      "tripTitle": "City Exploration Adventure",
+      "price": 2999
+    },
+    {
+      "id": 2,
+      "name": "Historical Heritage",
+      "img": "https://i.ibb.co/GpzG4xx/historical.jpg",
+      "tripTitle": "Journey through History",
+      "price": 2499
+    },
+    {
+      "id": 3,
+      "name": "Cultural Immersion",
+      "img": "https://i.ibb.co/GFfNm1F/cultural.jpg",
+      "tripTitle": "Immersive Cultural Experience",
+      "price": 2799
+    },
+    {
+      "id": 4,
+      "name": "Beach Bliss Retreat",
+      "img": "https://i.ibb.co/GTscn23/beach.jpg",
+      "tripTitle": "Beach Paradise Getaway",
+      "price": 3499
+    },
+    {
+      "id": 5,
+      "name": "Sightseer's Paradise",
+      "img": "https://i.ibb.co/HqJ29mV/sightseer.jpg",
+      "tripTitle": "Ultimate Sightseeing Tour",
+      "price": 3199
+    }
+  ]
+  
