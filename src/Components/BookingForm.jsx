@@ -6,12 +6,18 @@ import { useState } from "react";
 import useGuide from "../Hooks/useGuide";
 import useaxiosPublic from "../Hooks/useaxiosPublic";
 import Swal from "sweetalert2";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
-const BookingForm = () => {
+const BookingForm = ({selectedTours}) => {
+   const {name} = selectedTours
+   console.log(name);
     const [selectedDate, setSelectedDate] = useState(null);
     const axiosPublic = useaxiosPublic()
     const[guides] = useGuide()
+    const location = useLocation()
+    const navigate = useNavigate()
+    
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
@@ -29,6 +35,7 @@ const BookingForm = () => {
 
         console.log(data)
         const AllTours = {
+         packageName : name,
           name : data.name,
           email : data.email,
           url: data.url,
@@ -36,16 +43,23 @@ const BookingForm = () => {
           price: data.price,
         }
         console.log(AllTours);
-        const res = await axiosPublic.post('/guides', AllTours)
+        const res = await axiosPublic.post('/bookings', AllTours)
         if(res.data.insertedId){
           reset()
           Swal.fire({
-            position: "top-center",
+            title: "",
+            text: "You succesfully booked a tour!",
             icon: "success",
-            title: "You Successfully booked this tour!!",
-            showConfirmButton: false,
-            timer: 1500
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "My Bookings"
+          }).then((result) => {
+            if (result.isConfirmed) {
+             navigate('/dashboard/mybookings',{state:{from:location}})
+            }
           });
+          
          
         }
     }

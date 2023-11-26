@@ -2,6 +2,7 @@
 
 import { useParams } from "react-router-dom";
 import useTours from "../Hooks/useTours";
+import BookingForm from "./BookingForm";
 
 
 
@@ -31,6 +32,7 @@ const TourSections = () => {
             </div>
         </div>
 
+         <BookingForm selectedTours={selectedTours}></BookingForm>
        
         </div>
     );

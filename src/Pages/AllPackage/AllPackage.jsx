@@ -1,14 +1,26 @@
+import { Triangle } from "react-loader-spinner";
+import useAuth from "../../Hooks/useAuth";
 import useTours from "../../Hooks/useTours";
+import { Link } from "react-router-dom";
 
 
 const AllPackage = () => {
+    const {loading} = useAuth()
    const [tourPackage] = useTours()
     return (
        <div>
         <h2 className='text-3xl text-green-700 font-bold text-center my-4'>Here's our All Packages</h2>
          <div className='my-10 grid grid-cols-1 gap-6 md:grid-cols-2'>
             {
-                tourPackage.map(tour=> <div key={tour._id}>
+                loading ? <div className="w-[max-content] mx-auto"> <Triangle
+                height="80"
+                width="80"
+                color="#4fa94d"
+                ariaLabel="triangle-loading"
+                wrapperStyle={{}}
+                wrapperClassName=""
+                visible={true}
+              /> </div> : tourPackage.map(tour=> <div key={tour._id}>
                      
 
                     <div className="bg-white mx-auto w-96 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
@@ -21,10 +33,10 @@ const AllPackage = () => {
                             </a>
                             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{tour.tripTitle}</p>
                     
-                            <button className="flex justify-center mx-auto items-center text-white bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">View Package
+                            <Link to={`/tours/${tour._id}`}><button className="flex justify-center mx-auto items-center text-white bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">View Package
                             <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                                </svg></button>
+                                </svg></button></Link>
                         </div>
                     </div>
                     

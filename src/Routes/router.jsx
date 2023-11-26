@@ -7,6 +7,11 @@ import Login from '../Pages/Login/Login';
 import Register from '../Pages/Register/Register';
 import AllPackage from '../Pages/AllPackage/AllPackage';
 import PackageDetails from './PackageDetails';
+import GuideProfile from '../Pages/GuideProfile/GuideProfile';
+import Dashboard from '../Layouts/Dashboard';
+import Mybookings from '../Pages/Dashboard/Mybookings';
+import MyProfile from '../Pages/Dashboard/MyProfile';
+import MyWishlist from '../Pages/Dashboard/MyWishlist';
 
 const router = createBrowserRouter([
     {
@@ -31,6 +36,10 @@ const router = createBrowserRouter([
         {
           path: '/tours/:id',
           element:<PackageDetails></PackageDetails>
+        },
+        {
+          path: '/guide/:id',
+          element: <GuideProfile></GuideProfile>
         }
       ]
     },
@@ -41,6 +50,24 @@ const router = createBrowserRouter([
     {
         path: 'register',
         element: <Register></Register>
+    },
+    {
+      path: 'dashboard',
+      element: <Dashboard></Dashboard>,
+      children:[
+        {
+          path: 'mybookings',
+        element: <Mybookings></Mybookings>
+        },{
+          path: 'myprofile',
+          element: <MyProfile></MyProfile>
+        },
+        {
+          path: 'mywishlist',
+          element: <MyWishlist></MyWishlist>
+        }
+
+      ]
     }
   ]);
 

@@ -14,7 +14,7 @@ const PackageDetails = () => {
             <TourSections></TourSections>
             <DayTour></DayTour>
             <MeetGuides></MeetGuides>
-            <BookingForm></BookingForm>
+            {/* <BookingForm></BookingForm> */}
            
         </div>
     );

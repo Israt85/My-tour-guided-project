@@ -1,10 +1,35 @@
 import { Link } from "react-router-dom";
 import { GiSelfLove } from "react-icons/gi";
 import useTours from "../../../Hooks/useTours";
+import useAuth from "../../../Hooks/useAuth";
+import useaxiosPublic from "../../../Hooks/useaxiosPublic";
+
 
 
 const OurPackage = () => {
    const [tourCards] = useTours()
+  
+  
+   const axiosPublic = useaxiosPublic()
+   const {user} = useAuth()
+    const handleAddtoWishlist = (card)=>{
+        if(user && user?.email){
+        
+            console.log(card);
+            const wishlist ={
+                package : card?.name,
+                price : card?.price,
+                email: user?.email
+            }
+            console.log('wishlist', wishlist);
+            axiosPublic.post('/wishlist', wishlist)
+            .then(res => console.log(res.data))
+          
+        }
+    }
+
+
+
     return (
         <div>
             <div className="grid gap-4 mx-4 grid-cols-1 md:grid-cols-3">
@@ -14,9 +39,9 @@ const OurPackage = () => {
 
                 <div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
-                        <img className="relative rounded-t-lg h-52" src={card.img} alt="" />
-                        <div className="w-full px-4 text-3xl -mt-48 ml-64 absolute">
-                            <GiSelfLove></GiSelfLove>
+                        <img className="relative rounded-t-lg w-full h-52" src={card.img} alt="" />
+                       <div onClick={()=>handleAddtoWishlist (card)} className="w-full px-4 text-3xl -mt-48 ml-64 absolute">
+                           <GiSelfLove></GiSelfLove>
                         </div>
                         <div className="w-20 text-white mx-4 bg-black text-xl -mt-48 absolute">
                             $ {card.price}
@@ -40,7 +65,7 @@ const OurPackage = () => {
                 
                 
                 
-                                </div> )} </>:<> {tourCards.map(card=> <div key={card._id}>
+                                </div>)} </>:<> {tourCards.map(card=> <div key={card._id}>
                      
 
                      <div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
