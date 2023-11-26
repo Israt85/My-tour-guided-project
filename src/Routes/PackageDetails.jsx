@@ -1,5 +1,3 @@
-
-import BookingForm from '../Components/BookingForm';
 import DayTour from '../Components/DayTour';
 import Gallery from '../Components/Gallery';
 import TourSections from '../Components/TourSections';
@@ -14,7 +12,7 @@ const PackageDetails = () => {
             <TourSections></TourSections>
             <DayTour></DayTour>
             <MeetGuides></MeetGuides>
-            {/* <BookingForm></BookingForm> */}
+           
            
         </div>
     );

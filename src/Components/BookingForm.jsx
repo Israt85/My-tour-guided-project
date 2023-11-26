@@ -41,6 +41,7 @@ const BookingForm = ({selectedTours}) => {
           url: data.url,
           guideName: data.guideName,
           price: data.price,
+          date: selectedDate
         }
         console.log(AllTours);
         const res = await axiosPublic.post('/bookings', AllTours)
