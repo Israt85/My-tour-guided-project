@@ -56,7 +56,7 @@ const ManageUser = () => {
             <div>
                 
 
-<div className="relative w-60 m-10 shadow-md sm:rounded-lg">
+<div className="relative w-96 m-10 shadow-md sm:rounded-lg">
     <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -91,13 +91,10 @@ const ManageUser = () => {
                     {user.email}
                 </td>
                 <td className="px-6 py-4">
-                <div>
-      <select id="roleDropdown" onChange={()=>setSelectedRole(user._id)}>
-        <option value="">Select a role</option>
-        <option value="admin">Admin</option>
-        <option value="tourguide">Tour Guide</option>
-      </select>
-    </div>
+              <div className="flex">
+              <button className="border p-2 bg-green-700 rounded-xl text-white">Admin</button>
+                <button className="border p-2 bg-pink-500 rounded-xl text-white">Tour Guide</button>
+              </div>
                 </td>
                 <td className="px-6 py-4">
                     <button onClick={()=>handledelete(user)} href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>

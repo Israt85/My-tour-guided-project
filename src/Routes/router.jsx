@@ -15,6 +15,7 @@ import MyWishlist from '../Pages/Dashboard/MyWishlist';
 import StoryDetails from '../Pages/Home/StorySection/StoryDetails';
 import ManageUser from '../Pages/Dashboard/Admin/ManageUser';
 import AdminProfile from '../Pages/Dashboard/Admin/adminProfile';
+import AddPackage from '../Pages/Dashboard/Admin/AddPackage';
 
 const router = createBrowserRouter([
     {
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
         {
           path: 'adminprofile',
           element: <AdminProfile></AdminProfile>
+        },
+        {
+          path: 'addpackage',
+          element: <AddPackage></AddPackage>
         }
 
       ]
