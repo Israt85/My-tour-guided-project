@@ -1,8 +1,48 @@
+import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
+import useaxiosPublic from "../../Hooks/useaxiosPublic";
+import Swal from "sweetalert2";
 
-
+const image_hosting_key= import.meta.env.VITE_IMAGE_HOSTING_KEY
+const image_hosting_api= `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const MyProfile = () => {
     const { user } = useAuth()
+    const axiosPublic= useaxiosPublic()
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+    const onSubmit = async(data) => {
+        const imageFile = {image : data.image[0]}
+        const res = await axiosPublic.post(image_hosting_api,imageFile,{
+            headers: {
+                'content-type' : 'multipart/form-data'
+            }
+        })
+        if(res.data.success){
+            const story ={
+                experience : data.message,
+                image: res.data.data.display_url
+
+            }
+          const storyRes= await axiosPublic.post('/story', story)
+          console.log(storyRes);
+          if(storyRes.data.insertedId){
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Your work has been saved",
+                showConfirmButton: false,
+                timer: 1500
+              });
+          }
+        }
+        console.log(res.data);
+    }
+
+
     return (
         <div className="w-full m-10">
 
@@ -26,16 +66,30 @@ const MyProfile = () => {
                             {/* Open the modal using document.getElementById('ID').showModal() method */}
                             <button className="btn" onClick={() => document.getElementById('my_modal_5').showModal()}>Add Story</button>
                             <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
-                                <div className="modal-box">
-                                    <h3 className="font-bold text-lg">Hello!</h3>
-                                    <p className="py-4">Press ESC key or click the button below to close</p>
-                                    <div className="modal-action">
-                                        <form method="dialog">
-                                            {/* if there is a button in form, it will close the modal */}
-                                            <button className="btn">Close</button>
-                                        </form>
+                                <form onSubmit={handleSubmit(onSubmit)} >
+
+
+
+                                    <div className="modal-box p-4 my-4 w-96">
+
+                                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Upload file</label>
+                                        <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" {...register("image")} type="file"/>
+
+
+                                            <div>
+                                                <label className=" pt-2 text-sm font-medium text-gray-900 dark:text-white">share your experience :</label>
+                                                <textarea id="message" {...register("message")} rows="4" className="my-4 mx-auto p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
+                                                <button>submit</button>
+                                            </div>
+
+                                            <div className="modal-action">
+                                                <form method="dialog">
+                                                    {/* if there is a button in form, it will close the modal */}
+                                                    <button className="btn bg-red-800 p-2 rounded-lg">Close</button>
+                                                </form>
+                                            </div>
                                     </div>
-                                </div>
+                                </form>
                             </dialog>
 
 

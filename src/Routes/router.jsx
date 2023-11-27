@@ -12,6 +12,7 @@ import Dashboard from '../Layouts/Dashboard';
 import Mybookings from '../Pages/Dashboard/Mybookings';
 import MyProfile from '../Pages/Dashboard/MyProfile';
 import MyWishlist from '../Pages/Dashboard/MyWishlist';
+import StoryDetails from '../Pages/Home/StorySection/StoryDetails';
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         {
           path: '/guide/:id',
           element: <GuideProfile></GuideProfile>
+        },
+        {
+          path: '/story/:id',
+          element: <StoryDetails></StoryDetails>
         }
       ]
     },

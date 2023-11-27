@@ -1,9 +1,10 @@
+import AboutBanner from "./AboutBanner";
 
 
 const About = () => {
     return (
         <div>
-            <h2>About</h2>
+         <AboutBanner></AboutBanner>
         </div>
     );
 };

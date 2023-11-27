@@ -15,7 +15,7 @@ const TourType = () => {
         })
     },[axiosPublic])
     return (
-        <div className="my-10 min-h-screen">
+        <div className="h-auto my-10 ">
             <div className="text-center "><h1 className='my-2 text-3xl text-green-700 italic'>Tour Type.....</h1>
             <h2 className='my-2 text-xl'>Here you can see our tours variation</h2></div>
             <div className="grid grid-cols-5 item-center w-full border-4 border-green-700 px-16 mx-auto py-28 h-96">
