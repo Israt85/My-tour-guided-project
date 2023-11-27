@@ -1,10 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import regis from '../../assets/register.png'
 import { useForm } from 'react-hook-form';
+import SocialLogin from '../../Components/SocialLogin';
+import useaxiosPublic from '../../Hooks/useaxiosPublic';
+import Swal from 'sweetalert2';
 
 const Register = () => {
     const {userRegister,updateUserProfile} = useAuth()
+    const nevigate = useNavigate()
+    const axiosPublic= useaxiosPublic()
     const {
         register,
         handleSubmit,
@@ -18,13 +23,36 @@ const Register = () => {
         .then(result=>{
             console.log(result.user);
             updateUserProfile(data.name, data.url)
-            .then(result=>{
-                console.log(result.user);
-            })
-            .catch(err=>{
-                console.log(err);
-            })
-        })
+            .then(()=>{
+                const userInfo ={
+                   name: data.name,
+                   email : data.email
+                }
+                
+                axiosPublic.post('/users', userInfo)
+                .then(res =>{
+                   if(res.data.insertedId){
+                       console.log('user added');
+                       Swal.fire({
+                           position: "top-end",
+                           icon: "success",
+                           title: "User created succesfully",
+                           showConfirmButton: false,
+                           timer: 1500
+                         });
+                         nevigate("/")
+                   }
+                })
+                .catch(err =>{
+                   console.log(err);
+                })
+               
+           })
+          
+           .catch(err =>{
+               console.log(err);
+           })
+       })
         .catch(err=>{
             console.log(err);
         })
@@ -58,6 +86,7 @@ const Register = () => {
                         <div>
                             <button type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
                         </div>
+                        <SocialLogin></SocialLogin>
                         <h2 className='mt-4'>Already have an acoount? please <Link className='text-blue-800 font-bold hover:underline' to='/login'>Login</Link> </h2>
                     </form>
 

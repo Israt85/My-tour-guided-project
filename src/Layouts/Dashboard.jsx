@@ -1,12 +1,47 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useAuth from "../Hooks/useAuth";
 
 
 const Dashboard = () => {
+
+    const isAdmin = true;
+    const {user} = useAuth()
     return (
-        <div>
-            <div className="flex min-h-screen">
-                <div className="w-60 bg-red-400 border">
-              <ul className="menu space-y-4 p-4">
+        <div className="flex min-h-screen">
+
+    
+      <ul className="menu w-52 space-y-4 p-4">
+       { isAdmin? <>
+              <li>
+                <NavLink to='/dashboard/adminprofile'>
+                My Profile
+                </NavLink>
+                
+                </li>
+              <li>
+                <NavLink to='/dashboard/addpackage'>
+                Add Package
+                </NavLink>
+                
+                </li>
+              <li>
+                <NavLink to='/dashboard/manageusers'>
+               Manage Users
+                </NavLink>
+                
+                </li>
+              <li>
+                <NavLink to='/'>
+                Home
+                </NavLink>
+                
+                </li>
+
+
+
+            </>: 
+    <>
+    
               <li>
                 <NavLink to='/dashboard/myprofile'>
                 My Profile
@@ -32,17 +67,19 @@ const Dashboard = () => {
                 
                 </li>
 
+    
+    
+    </>
+    
+    }
+
 
 
               </ul>
-                 
-                
-                </div>
-                <div className=" flex-1 border">
+                <div className=" flex-1 bg-green-100">
                   <Outlet></Outlet>
                 </div>
             </div>
-        </div>
     );
 };
 

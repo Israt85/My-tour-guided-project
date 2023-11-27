@@ -13,6 +13,8 @@ import Mybookings from '../Pages/Dashboard/Mybookings';
 import MyProfile from '../Pages/Dashboard/MyProfile';
 import MyWishlist from '../Pages/Dashboard/MyWishlist';
 import StoryDetails from '../Pages/Home/StorySection/StoryDetails';
+import ManageUser from '../Pages/Dashboard/Admin/ManageUser';
+import AdminProfile from '../Pages/Dashboard/Admin/adminProfile';
 
 const router = createBrowserRouter([
     {
@@ -44,7 +46,8 @@ const router = createBrowserRouter([
         },
         {
           path: '/story/:id',
-          element: <StoryDetails></StoryDetails>
+          element: <StoryDetails></StoryDetails>,
+          
         }
       ]
     },
@@ -70,6 +73,16 @@ const router = createBrowserRouter([
         {
           path: 'mywishlist',
           element: <MyWishlist></MyWishlist>
+        },
+
+        // admin
+        {
+          path: 'manageusers',
+          element: <ManageUser></ManageUser>
+        },
+        {
+          path: 'adminprofile',
+          element: <AdminProfile></AdminProfile>
         }
 
       ]
