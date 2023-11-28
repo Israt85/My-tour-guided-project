@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import regis from '../../assets/register.png'
 import { useForm } from 'react-hook-form';
@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
 const Register = () => {
     const {userRegister,updateUserProfile} = useAuth()
     const nevigate = useNavigate()
+    const location = useLocation()
     const axiosPublic= useaxiosPublic()
     const {
         register,
@@ -40,7 +41,7 @@ const Register = () => {
                            showConfirmButton: false,
                            timer: 1500
                          });
-                         nevigate("/")
+                         nevigate(location?.state ? location.state : "/");
                    }
                 })
                 .catch(err =>{

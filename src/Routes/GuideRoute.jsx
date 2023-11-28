@@ -1,14 +1,16 @@
 import { Navigate, useLocation } from "react-router-dom";
-import useAdmin from "../Hooks/useAdmin";
 import useAuth from "../Hooks/useAuth";
 import { RotatingLines } from "react-loader-spinner";
+import useGuideT from "../Hooks/useGuideT";
 
-const AdminRoute = ({children}) => {
+
+const GuideRoute = ({children}) => {
     const {user, loading} = useAuth()
-    const [isAdmin, isAdminLoading] = useAdmin()
+    const [isTourGuide,isGuideLoading] = useGuideT()
+
     const location = useLocation()
 
-        if(loading || isAdminLoading){
+        if(loading || isGuideLoading){
             return <RotatingLines
             strokeColor="#4fa94d"
             strokeWidth="5"
@@ -17,11 +19,11 @@ const AdminRoute = ({children}) => {
             visible={true}
           />
         }
-        if(user && isAdmin){
+        if(user && isTourGuide){
           return children;
         }
     
         return <Navigate to='/login' state={{from : location}} replace></Navigate>
 };
 
-export default AdminRoute;
+export default GuideRoute;

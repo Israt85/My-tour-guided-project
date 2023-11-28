@@ -16,6 +16,11 @@ import StoryDetails from '../Pages/Home/StorySection/StoryDetails';
 import ManageUser from '../Pages/Dashboard/Admin/ManageUser';
 import AdminProfile from '../Pages/Dashboard/Admin/adminProfile';
 import AddPackage from '../Pages/Dashboard/Admin/AddPackage';
+import PrivateRoute from './PrivateRoute';
+import AdminRoute from './AdminRoute';
+import Tourprofile from '../Pages/Dashboard/TourGuide/Tourprofile';
+import AssignTour from '../Pages/Dashboard/TourGuide/AssignTour';
+import GuideRoute from './GuideRoute';
 
 const router = createBrowserRouter([
     {
@@ -39,7 +44,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/tours/:id',
-          element:<PackageDetails></PackageDetails>
+          element:<PrivateRoute><AddPackage></AddPackage></PrivateRoute>
         },
         {
           path: '/guide/:id',
@@ -66,28 +71,39 @@ const router = createBrowserRouter([
       children:[
         {
           path: 'mybookings',
-        element: <Mybookings></Mybookings>
+        element: <PrivateRoute><Mybookings></Mybookings></PrivateRoute>
         },{
           path: 'myprofile',
-          element: <MyProfile></MyProfile>
+          element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
         },
         {
           path: 'mywishlist',
-          element: <MyWishlist></MyWishlist>
+          element: <PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
         },
 
         // admin
         {
           path: 'manageusers',
-          element: <ManageUser></ManageUser>
+          element: <AdminRoute><ManageUser></ManageUser></AdminRoute>
         },
         {
           path: 'adminprofile',
-          element: <AdminProfile></AdminProfile>
+          element: <AdminRoute><AdminProfile></AdminProfile></AdminRoute>
         },
         {
           path: 'addpackage',
-          element: <AddPackage></AddPackage>
+          element: <AdminRoute><AddPackage></AddPackage></AdminRoute>
+        },
+
+
+        // tour guide
+        {
+           path: 'tourprofile',
+           element: <GuideRoute><Tourprofile></Tourprofile></GuideRoute>
+        },
+        {
+          path: 'assingtours',
+          element: <GuideRoute><AssignTour></AssignTour></GuideRoute>
         }
 
       ]

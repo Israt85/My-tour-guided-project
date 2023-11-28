@@ -2,16 +2,18 @@
 import { FcGoogle } from 'react-icons/fc';
 import useAuth from '../Hooks/useAuth';
 import useaxiosPublic from '../Hooks/useaxiosPublic';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const SocialLogin = () => {
     const {googleSignIn} = useAuth()
     const axiosPublic = useaxiosPublic()
     const nevigate = useNavigate()
+    const location = useLocation()
     const handleGoogle=()=>{
         googleSignIn()
         .then(result =>{
             console.log(result.user);
+            nevigate(location?.state ? location.state : "/");
             const userInfo ={
                 name: result.user?.displayName,
                 email: result.user?.email
@@ -19,7 +21,7 @@ const SocialLogin = () => {
             axiosPublic.post('/users',userInfo)
             .then(res=>{
                 console.log(res.data);
-                nevigate('/')
+                
             })
         })
 
