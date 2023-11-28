@@ -21,10 +21,10 @@ const Navbar = () => {
         })
     }
     return (
-        <div>
+        <div >
 
 
-            <nav className="bg-green-700 relative text-white border-gray-200 dark:bg-gray-900">
+            <nav className="bg-green-900 text-white border-gray-200 dark:bg-gray-900">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="https://flowbite.com/" className="flex items-center space-x-3">
                         <img src={logo} className="h-8" alt="Flowbite Logo" />
@@ -88,9 +88,9 @@ const Navbar = () => {
                             <Link to='/community'> <li>
                                 <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Community</a>
                             </li></Link>
-                            <li>
+                           <Link to={``}> <li>
                                 <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blogs</a>
-                            </li>
+                            </li></Link>
                             <li>
                                 <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
                             </li>

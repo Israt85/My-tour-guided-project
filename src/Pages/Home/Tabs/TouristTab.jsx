@@ -5,7 +5,7 @@ import MeetGuides from './MeetGuides';
 
 const TouristTab = () => {
     return (
-        <div className='my-10 text-center'>
+        <div className=' text-center'>
             <Tabs>
                 <TabList>
                     <Tab>Overview</Tab>

@@ -1,11 +1,10 @@
 import { Link, NavLink, Outlet } from "react-router-dom";
-import useAuth from "../Hooks/useAuth";
+import useAdmin from "../Hooks/useAdmin";
 
 
 const Dashboard = () => {
 
-    const isAdmin = true;
-    const {user} = useAuth()
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex min-h-screen">
 

@@ -49,7 +49,7 @@ const AuthProvider = ({children}) => {
         return ()=>{
             return unsubscribe()
         }
-    },[auth])
+    },[auth,axiosPublic])
     const updateUserProfile= (name,photourl) =>{
         setLoading(true)
         return updateProfile(auth.currentUser,{
