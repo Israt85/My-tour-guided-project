@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
-import useaxiosPublic from '../../Hooks/useaxiosPublic';
-import useWish from '../../Hooks/useWish';
 import useBookings from '../../Hooks/useBookings';
 
 const Mybookings = () => {
     const [bookings, refetch] = useBookings()
-    const [isDisabled, setIsDisabled] = useState(false)
-
- 
-
-     
-
-
 
 
     return (

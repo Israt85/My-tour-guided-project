@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 
 
 const ManageUser = () => {
-
+    
     const axiosSecure = useaxiosSecure()
     const { data: users , refetch } = useQuery({
         queryKey: ['userinfo'],

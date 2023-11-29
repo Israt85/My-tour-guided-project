@@ -1,38 +1,39 @@
 [
     {
-      "id": 1,
-      "name": "City Explorer",
-      "img": "https://i.ibb.co/fYmVrCT/cityexplore.jpg",
-      "tripTitle": "City Exploration Adventure",
-      "price": 2999
+      "name": "Elena Rodriguez",
+      "img": "https://i.ibb.co/yspNZnR/portrait-young-beautiful-hipster-girl-trendy-summer-sundress-158538-18256.jpg",
+      "description": "Meet Elena Rodriguez, an experienced and passionate tour guide with a deep love for the mountains. Elena specializes in leading Mountain Expeditions, taking adventurers through challenging terrains and sharing her extensive knowledge of alpine ecosystems. With a warm and friendly demeanor, Elena ensures that every trek becomes a memorable and educational experience. Join Elena on a journey to explore the Himalayas and discover the awe-inspiring beauty of high-altitude landscapes.",
+      "experience": "Guiding mountain expeditions, flora and fauna expertise",
+      "location": "Based in Kathmandu, Nepal"
     },
     {
-      "id": 2,
-      "name": "Historical Heritage",
-      "img": "https://i.ibb.co/GpzG4xx/historical.jpg",
-      "tripTitle": "Journey through History",
-      "price": 2499
+      "name": "Carlos Silva",
+      "img": "https://img.freepik.com/free-photo/smiling-young-man-with-crossed-arms-outdoors_1140-255.jpg?w=740&t=st=1700849199~exp=1700849799~hmac=058a32aed487d668c8c098259d7f95d34520063d0677b40d81a9b253e9717495",
+      "description": "Escape to paradise with Carlos Silva, a seasoned tour guide specializing in Tropical Paradise Retreats. Carlos creates an atmosphere of relaxation and luxury, guiding travelers through sun-soaked beaches, turquoise waters, and lush greenery. With a focus on tropical indulgence, Carlos ensures that guests experience the ultimate in beachfront accommodations, spa treatments, and vibrant tropical adventures. Join Carlos for an unforgettable retreat in the enchanting surroundings of Bora Bora.",
+      "experience": "Leading tropical retreats, spa and wellness expertise",
+      "location": "Based in Papeete, French Polynesia"
     },
     {
-      "id": 3,
-      "name": "Cultural Immersion",
-      "img": "https://i.ibb.co/GFfNm1F/cultural.jpg",
-      "tripTitle": "Immersive Cultural Experience",
-      "price": 2799
+      "name": "Sophia Conti",
+      "img": "https://i.ibb.co/8gVkmGW/young-cute-woman-cap-glasses-posing-outside-showing-thumbs-up-high-quality-photo-114579-91847.jpg",
+      "description": "Immerse yourself in cultural exploration with Sophia Conti, a knowledgeable tour guide specializing in Cultural Heritage Tours. Sophia's passion for history, art, and traditions shines through as she guides travelers through the historic streets of Rome. With Sophia, you'll unravel the stories of ancient civilizations, explore architectural wonders, and gain a deep appreciation for cultural heritage. Join Sophia for a journey that transcends time and unveils the captivating heritage of Italy's capital.",
+      "experience": "Guiding cultural heritage tours, historical insights",
+      "location": "Based in Rome, Italy"
     },
     {
-      "id": 4,
-      "name": "Beach Bliss Retreat",
-      "img": "https://i.ibb.co/GTscn23/beach.jpg",
-      "tripTitle": "Beach Paradise Getaway",
-      "price": 3499
+      "name": "Diego Santos",
+      "img": "https://i.ibb.co/1Rg4t2N/indoor-picture-cheerful-handsome-young-man-having-folded-hands-looking-directly-smiling-sincerely-we.jpg",
+      "description": "Embark on a wild adventure with Diego Santos, an expert tour guide specializing in Jungle Safari Adventures. Diego's love for nature and wildlife is contagious as he leads travelers through the dense jungles of the Amazon Rainforest. With Diego, you'll have the opportunity to spot exotic animals, take jungle safaris, and immerse yourself in the wonders of the natural world. Join Diego for an unforgettable safari experience that brings you face-to-face with the diverse wildlife of the Amazon.",
+      "experience": "Leading jungle safaris, wildlife expertise",
+      "location": "Based in Manaus, Brazil"
     },
     {
-      "id": 5,
-      "name": "Sightseer's Paradise",
-      "img": "https://i.ibb.co/HqJ29mV/sightseer.jpg",
-      "tripTitle": "Ultimate Sightseeing Tour",
-      "price": 3199
+      "name": "Isabella Fernandez",
+      "img": "https://i.ibb.co/Fqpnm5F/attractive-girl-by-window-144627-7998.jpg",
+      "description": "Experience city life like never before with Isabella Fernandez, a vibrant tour guide specializing in Urban Explorer's Delight. Isabella's enthusiasm for exploring diverse neighborhoods, iconic landmarks, and cultural hotspots makes every tour an exciting adventure. With Isabella, you'll discover the pulse of city streets, visit trendy cafes, and explore cutting-edge art galleries. Join Isabella for an urban exploration that combines the thrill of discovery with the richness of modern city life.",
+      "experience": "Guiding urban explorations, cultural insights",
+      "location": "Based in Buenos Aires, Argentina"
     }
   ]
+  
   
