@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
 // import useWindowSize from 'react-use/lib/useWindowSize'
-
+import Confetti from 'react-confetti'
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import useGuide from "../Hooks/useGuide";
@@ -10,8 +10,7 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
 import useTours from "../Hooks/useTours";
-import useBookings from "../Hooks/useBookings";
-// import Confetti from "react-confetti/dist/types/Confetti";
+import useBookings from "../Hooks/useBookings"
 
 
 const BookingForm = ({selectedTours}) => {
@@ -24,20 +23,15 @@ const BookingForm = ({selectedTours}) => {
     const[guides] = useGuide()
     const location = useLocation()
     const navigate = useNavigate()
+    const [celebrate, setCelebrate] = useState(false);
+
+    
     
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
-  const handleCongratulation =()=>{
-       if(bookings.length>3){
-        console.log('congrat');
-    //     <Confetti
-    //   width={width}
-    //   height={height}
-    // />
-       }
-  }
+  
 
     const {
         register,
@@ -63,6 +57,26 @@ const BookingForm = ({selectedTours}) => {
         const res = await axiosPublic.post('/bookings', AllTours)
         if(res.data.insertedId){
           reset()
+          if(bookings.length>3){
+             setCelebrate(true)
+             Swal.fire({
+              title: "",
+              text: "Congratulation You got a discount.Your Apply is Enable now!!",
+              icon: "success",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "My Bookings"
+            }).then((result) => {
+              if (result.isConfirmed) {
+               navigate('/dashboard/mybookings',{state:{from:location}})
+              }
+            });
+            return
+          }
+          setTimeout(() => {
+                setCelebrate(false);
+              }, 10000)
           Swal.fire({
             title: "",
             text: "You succesfully booked a tour!",
@@ -80,6 +94,20 @@ const BookingForm = ({selectedTours}) => {
          
         }
     }
+
+  
+    // const startCelebration = () => {
+    //   if(bookings.length >3){
+    //     setCelebrate(true)
+      
+    //   }
+      
+  
+    //   // Optionally, reset the celebration after a certain time
+    //   setTimeout(() => {
+    //     setCelebrate(false);
+    //   }, 10000); // 5000 milliseconds (adjust as needed)
+    // };
     return (
         <div className="my-10">
            <h2 className="text-center font-nold text-3xl my-4">Book your tour here...</h2>
@@ -133,8 +161,22 @@ const BookingForm = ({selectedTours}) => {
         <label  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">price</label>
     </div>
   </div>
-  <button onClick={handleCongratulation} type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</button>
+  <button onClick={()=>setCelebrate(true)}type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now
+  {celebrate && (
+  <Confetti
+    width={window.innerWidth}   
+     height={1500} 
+    numberOfPieces={1000}
+    gravity={0.3}
+    recycle={false}
+  />
+)}
+
+  
+  
+  </button>
 </form>
+
 
            </div>
         </div>
