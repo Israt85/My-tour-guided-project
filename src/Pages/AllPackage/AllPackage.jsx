@@ -4,6 +4,7 @@ import useTours from "../../Hooks/useTours";
 import { Link } from "react-router-dom";
 import { GiSelfLove } from "react-icons/gi";
 import useaxiosPublic from "../../Hooks/useaxiosPublic";
+import Swal from "sweetalert2";
 
 
 const AllPackage = () => {
@@ -24,9 +25,19 @@ const AllPackage = () => {
             }
             console.log('wishlist', wishlist);
             axiosPublic.post('/wishlist', wishlist)
-            .then(res => console.log(res.data))
+            .then(res => {
+               if(res.data.insertedId){
+                Swal.fire({
+                    position: "top-center",
+                    icon: "success",
+                    title: "successfully added this in your wishlist",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+               }
           
-        }
+        })
+    }
     }
     return (
        <div>

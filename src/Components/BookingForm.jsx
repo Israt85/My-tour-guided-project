@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 import DatePicker from "react-datepicker";
+// import useWindowSize from 'react-use/lib/useWindowSize'
 
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
@@ -8,10 +9,15 @@ import useaxiosPublic from "../Hooks/useaxiosPublic";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
+import useTours from "../Hooks/useTours";
+import useBookings from "../Hooks/useBookings";
+// import Confetti from "react-confetti/dist/types/Confetti";
 
 
 const BookingForm = ({selectedTours}) => {
-   const {name} = selectedTours ||{}
+  const [bookings] = useBookings()
+  // const { width, height } = useWindowSize()
+   const {name,price} = selectedTours ||{}
    const {user} = useAuth()
     const [selectedDate, setSelectedDate] = useState(null);
     const axiosPublic = useaxiosPublic()
@@ -23,6 +29,15 @@ const BookingForm = ({selectedTours}) => {
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
+  const handleCongratulation =()=>{
+       if(bookings.length>3){
+        console.log('congrat');
+    //     <Confetti
+    //   width={width}
+    //   height={height}
+    // />
+       }
+  }
 
     const {
         register,
@@ -114,11 +129,11 @@ const BookingForm = ({selectedTours}) => {
         <label className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Tour Guide Name</label>
     </div>
     <div className="relative z-0 w-full mb-5 group">
-        <input type="text" {...register("price")} id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <input readOnly type="text"  {...register("price")} defaultValue={price} id="floating_company" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         <label  className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">price</label>
     </div>
   </div>
-  <button type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</button>
+  <button onClick={handleCongratulation} type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now</button>
 </form>
 
            </div>

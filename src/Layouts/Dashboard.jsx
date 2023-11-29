@@ -8,7 +8,7 @@ const Dashboard = () => {
   
     return (
       <div className="flex min-h-screen">
-        <ul className="menu w-52 space-y-4 p-4">
+        <ul className="menu w-52 bg-pink-200 text-xl py-10 space-y-4 px-4">
           {isAdmin && (
             <>
               <li>
@@ -20,7 +20,7 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/manageusers">Manage Users</NavLink>
               </li>
-              <li>
+              <li className="border-t-2 border-black">
                 <NavLink to="/">Home</NavLink>
               </li>
             </>
@@ -37,7 +37,7 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/mywishlist">My WishList</NavLink>
               </li>
-              <li>
+              <li className="border-t-2 border-black">
                 <NavLink to="/">Home</NavLink>
               </li>
             </>
@@ -50,10 +50,14 @@ const Dashboard = () => {
               <li>
                 <NavLink to="/dashboard/assingtours">My Assign tours</NavLink>
               </li>
-            
+              <li className="border-t-2 border-black">
+                <NavLink to="/">Home</NavLink>
+              </li>
             
             </>)
           }
+
+
         </ul>
         <div className="flex-1 bg-green-100">
           <Outlet></Outlet>

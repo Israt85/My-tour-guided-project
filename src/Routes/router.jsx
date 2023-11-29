@@ -21,6 +21,7 @@ import AdminRoute from './AdminRoute';
 import Tourprofile from '../Pages/Dashboard/TourGuide/Tourprofile';
 import AssignTour from '../Pages/Dashboard/TourGuide/AssignTour';
 import GuideRoute from './GuideRoute';
+import AllStories from '../Pages/AllStories/AllStories';
 
 const router = createBrowserRouter([
     {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/tours/:id',
-          element:<PrivateRoute><AddPackage></AddPackage></PrivateRoute>
+          element:<PrivateRoute><PackageDetails></PackageDetails></PrivateRoute>
         },
         {
           path: '/guide/:id',
@@ -54,6 +55,9 @@ const router = createBrowserRouter([
           path: '/story/:id',
           element: <StoryDetails></StoryDetails>,
           
+        },{
+          path: 'allStories',
+          element: <AllStories></AllStories>
         }
       ]
     },
@@ -78,7 +82,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'mywishlist',
-          element: <PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
+          element:<PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
         },
 
         // admin

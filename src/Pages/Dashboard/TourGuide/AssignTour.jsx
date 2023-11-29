@@ -1,13 +1,15 @@
 import useAuth from "../../../Hooks/useAuth";
-import useTours from "../../../Hooks/useTours";
+import useBookings from "../../../Hooks/useBookings";
+
 
 
 const AssignTour = () => {
-    const [tours] = useTours()
+   const [bookings] = useBookings()
     const {user} = useAuth()
+    console.log(bookings);
     return (
         <div>
-            <h2>assign</h2>
+           
             
         </div>
     );

@@ -4,8 +4,9 @@ import useaxiosSecure from "./useaxiosSecure";
 
 const useBookings = () => {
     const axiosSecure = useaxiosSecure()
-    const {user} = useAuth()
+    const {user,loading} = useAuth()
     const {data: Bookings =[] , refetch} = useQuery({
+        enabled: !loading && !!user?.email,
         queryKey: ['bookings', user?.email],
         queryFn: async()=>{
             const res = await axiosSecure.get(`/bookings?email=${user?.email}`) 

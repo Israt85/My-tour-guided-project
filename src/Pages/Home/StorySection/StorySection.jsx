@@ -11,22 +11,40 @@ const StorySection = () => {
             <div className=" mx-auto gap-4 grid grid-cols-1 md:grid-cols-2">
 
                 {
-                    story.map(store =>
+                   story?.length> 4 ? (story?.slice(0,4).map(store =>
 
-                        <div  key={store._id}><div  className="w-full mx-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"> <Link to={`/story/${store._id}`}>
+                    <div  key={store._id}><div  className="w-full mx-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        <img className="p-8 h-96 w-full rounded-t-lg" src={store.image} alt="product image" />
+                    </a>
+                    <div className="px-5 pb-5">
                         <a href="#">
-                            <img className="p-8 h-96 w-full rounded-t-lg" src={store.image} alt="product image" />
+                            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{store.
+                                experience}</h5>
                         </a>
-                        <div className="px-5 pb-5">
-                            <a href="#">
-                                <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{store.
-                                    experience}</h5>
-                            </a>
-                        </div>
-                        </Link>
-                    </div> </div>
-                    )
+                    </div>
+                </div> </div>
+                )) :  story?.map(store =>
+
+                    <div  key={store._id}><div  className="w-full mx-4 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        <img className="p-8 h-96 w-full rounded-t-lg" src={store.image} alt="product image" />
+                    </a>
+                    <div className="px-5 pb-5">
+                        <a href="#">
+                            <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{store.
+                                experience}</h5>
+                        </a>
+                    </div>
+                </div> </div>
+                )
                 }
+            </div>
+            <div>
+            <Link to='/allstories'> <button className="flex mt-4 justify-center mx-auto items-center text-white bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">All Stories
+                        <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                                <path stroke="currentColor" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                            </svg></button></Link>
             </div>
         </div>
     );

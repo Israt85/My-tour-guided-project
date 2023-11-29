@@ -2,12 +2,13 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../Hooks/useAuth";
 import useaxiosPublic from "../../Hooks/useaxiosPublic";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../Hooks/useaxiosSecure";
 
 const image_hosting_key= import.meta.env.VITE_IMAGE_HOSTING_KEY
 const image_hosting_api= `https://api.imgbb.com/1/upload?key=${image_hosting_key}`
 const MyProfile = () => {
     const { user } = useAuth()
-    const axiosPublic= useaxiosPublic()
+    const axiosSecure = useAxiosSecure()
 
     const {
         register,
@@ -16,7 +17,7 @@ const MyProfile = () => {
     } = useForm()
     const onSubmit = async(data) => {
         const imageFile = {image : data.image[0]}
-        const res = await axiosPublic.post(image_hosting_api,imageFile,{
+        const res = await axiosSecure.post(image_hosting_api,imageFile,{
             headers: {
                 'content-type' : 'multipart/form-data'
             }

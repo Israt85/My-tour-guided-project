@@ -41,8 +41,8 @@ const Register = () => {
                            showConfirmButton: false,
                            timer: 1500
                          });
-                         nevigate(location?.state ? location.state : "/");
                    }
+                   nevigate(location?.state ? location.state : "/")
                 })
                 .catch(err =>{
                    console.log(err);
