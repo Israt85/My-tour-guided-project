@@ -3,15 +3,19 @@
 import { useParams } from "react-router-dom";
 import useTours from "../Hooks/useTours";
 import BookingForm from "./BookingForm";
+import useWish from "../Hooks/useWish";
 
 
 
 const TourSections = () => {
     const {id} = useParams()
+    console.log(id);
     const [tours] = useTours()
+    const [wishlist]= useWish()
     console.log(tours);
 
-    const selectedTours = tours.find((tour) => tour._id == id)
+    const selectedTours = tours.find((tour) => (tour._id == id))
+
 
     console.log(selectedTours);
    
@@ -23,8 +27,10 @@ const TourSections = () => {
 
 
                 <div>
+                <p className="text-gray-900 text-xl dark:text-gray-400"> Tour Type: {selectedTours?.tourType} </p>
                 <p className="text-gray-500 dark:text-gray-400">{selectedTours?.
                     description} </p>
+                    <p>Location: {selectedTours?.location}</p>
                     <p>Price: ${selectedTours?.price}</p>
                 </div>
                 

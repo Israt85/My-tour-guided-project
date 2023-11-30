@@ -22,6 +22,7 @@ import Tourprofile from '../Pages/Dashboard/TourGuide/Tourprofile';
 import AssignTour from '../Pages/Dashboard/TourGuide/AssignTour';
 import GuideRoute from './GuideRoute';
 import AllStories from '../Pages/AllStories/AllStories';
+import TourTypeFilter from '../Pages/Home/TourType/TourTypeFilter';
 
 const router = createBrowserRouter([
     {
@@ -53,12 +54,21 @@ const router = createBrowserRouter([
         },
         {
           path: '/story/:id',
-          element: <StoryDetails></StoryDetails>,
+          element: <PrivateRoute><StoryDetails></StoryDetails></PrivateRoute>,
           
         },{
           path: 'allStories',
           element: <AllStories></AllStories>
+        },
+        {
+          path: '/list/:id',
+          element: <PackageDetails></PackageDetails>
+        },
+        {
+          path: '/tour/:tourtype',
+          element: <TourTypeFilter></TourTypeFilter>
         }
+        
       ]
     },
     {

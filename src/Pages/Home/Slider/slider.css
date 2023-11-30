@@ -7,6 +7,7 @@
 
 .swiper-slide {
   width: 100%;
+  margin:auto
   
 
 }
@@ -15,4 +16,15 @@
   width: 100%;
   opacity: 70%;
   height: 100%,
+}
+
+@media (max-width: 600px) {
+  .swiper,
+  .swiper-slide {
+    height: 200px;
+  }
+
+  .swiper-slide img {
+    height: 200px;
+  }
 }

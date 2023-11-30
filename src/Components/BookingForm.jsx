@@ -9,13 +9,11 @@ import useaxiosPublic from "../Hooks/useaxiosPublic";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../Hooks/useAuth";
-import useTours from "../Hooks/useTours";
 import useBookings from "../Hooks/useBookings"
 
 
 const BookingForm = ({selectedTours}) => {
   const [bookings] = useBookings()
-  // const { width, height } = useWindowSize()
    const {name,price} = selectedTours ||{}
    const {user} = useAuth()
     const [selectedDate, setSelectedDate] = useState(null);
@@ -56,7 +54,7 @@ const BookingForm = ({selectedTours}) => {
         console.log(AllTours);
         const res = await axiosPublic.post('/bookings', AllTours)
         if(res.data.insertedId){
-          reset()
+          
           if(bookings.length>3){
              setCelebrate(true)
              Swal.fire({
@@ -72,7 +70,8 @@ const BookingForm = ({selectedTours}) => {
                navigate('/dashboard/mybookings',{state:{from:location}})
               }
             });
-            return
+            reset()
+            
           }
           setTimeout(() => {
                 setCelebrate(false);
@@ -95,19 +94,6 @@ const BookingForm = ({selectedTours}) => {
         }
     }
 
-  
-    // const startCelebration = () => {
-    //   if(bookings.length >3){
-    //     setCelebrate(true)
-      
-    //   }
-      
-  
-    //   // Optionally, reset the celebration after a certain time
-    //   setTimeout(() => {
-    //     setCelebrate(false);
-    //   }, 10000); // 5000 milliseconds (adjust as needed)
-    // };
     return (
         <div className="my-10">
            <h2 className="text-center font-nold text-3xl my-4">Book your tour here...</h2>
@@ -133,7 +119,7 @@ const BookingForm = ({selectedTours}) => {
         <DatePicker
           selected={selectedDate}
           onChange={handleDateChange}
-          dateFormat="dd/MM/yyyy" // specify your desired date format
+          dateFormat="dd/MM/yyyy" 
           isClearable
           placeholderText="Select a date"
           className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"

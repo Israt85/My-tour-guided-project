@@ -3,6 +3,7 @@ import { GiSelfLove } from "react-icons/gi";
 import useTours from "../../../Hooks/useTours";
 import useAuth from "../../../Hooks/useAuth";
 import useaxiosPublic from "../../../Hooks/useaxiosPublic";
+import { motion } from 'framer-motion';
 
 
 
@@ -37,7 +38,14 @@ const OurPackage = () => {
                tourCards.length >3? <>{tourCards.slice(0,3).map(card=> <div key={card._id}>
                      
 
-                <div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                
+                     <motion.div
+      initial={{ opacity: 0, x: -100 }} 
+      animate={{ opacity: 10, x: 0 }}   
+      transition={{ duration: 2 }}    
+    >
+
+<div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img className="relative rounded-t-lg w-full h-52" src={card.img} alt="" />
                        <div onClick={()=>handleAddtoWishlist (card)} className="w-full px-4 text-3xl -mt-48 ml-64 absolute">
@@ -50,7 +58,7 @@ const OurPackage = () => {
                     </a>
                     <div className="p-5">
                         <a href="#">
-                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{card.name}</h5>
+                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{card?.tourType}</h5>
                         </a>
                         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{card.tripTitle}</p>
                 
@@ -60,6 +68,7 @@ const OurPackage = () => {
                             </svg></button></Link>
                     </div>
                 </div>
+    </motion.div>
                 
                 
                 
@@ -68,7 +77,13 @@ const OurPackage = () => {
                                 </div>)} </>:<> {tourCards.map(card=> <div key={card._id}>
                      
 
-                     <div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                                    <motion.div
+      initial={{ opacity: 0, x: -100 }} 
+      animate={{ opacity: 10, x: 0 }}   
+      transition={{ duration: 2 }}    
+    >
+
+<div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                          <a href="#">
                              <img className="rounded-t-lg h-52" src={card.img} alt="" />
                          </a>
@@ -84,6 +99,7 @@ const OurPackage = () => {
                                  </svg></button>
                          </div>
                      </div>
+    </motion.div>
                      
                      
                      

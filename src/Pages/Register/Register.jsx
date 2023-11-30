@@ -93,7 +93,7 @@ const Register = () => {
 
                 </div>
                 <div className='w-1/2'>
-                    <img className='w-96 h-96 bg-green-300 rounded-b-full rounded-l-full' src={regis} alt="" />
+                    <img className='w-96 h-96' src={regis} alt="" />
                 </div>
             </div>
         </div>

@@ -7,6 +7,10 @@ const Navbar = () => {
     const { user, userLogOut} = useAuth()
 
     const [isDropdownVisible, setDropdownVisibility] = useState(false);
+    const [forSmall, setForSmall] = useState(false)
+    const toggleForSmall = ()=>{
+        setForSmall(!forSmall)
+    }
 
     const toggleDropdown = () => {
         setDropdownVisibility(!isDropdownVisible);
@@ -61,8 +65,6 @@ const Navbar = () => {
                                             </div>
                                             <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
                                                 <Link to='/dashboard'><li><a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a></li></Link>
-                                                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a></li>
-                                                <li><a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a></li>
                                             </ul>
                                             <div className="py-2">
                                                 <button onClick={handelLogOut} className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Log out</button>
@@ -77,7 +79,44 @@ const Navbar = () => {
                         }
 
                     </div>
-                    <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-user">
+
+                    <div className='relative'>
+                    <button onClick={toggleForSmall} className="md:hidden text-white mx-6 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+      <span className="sr-only">Open main menu</span>
+      <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" d="M1 1h15M1 7h15M1 13h15"/>
+      </svg>
+    </button>
+                   
+{
+    forSmall && (
+        <div className="fixed z-10 mt-4 bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 dark:divide-gray-600">
+        {/* Dropdown content */}
+        <ul className="py-2 text-sm px-2 text-gray-700 dark:text-gray-200" aria-labelledby="dropdownInformationButton">
+        <Link to='/'><li>
+                                <a href="#" className="block py-2 px-3 md:hover:text-blue-700  rounded md:bg-transparent md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                            </li></Link>
+                            <Link to='/aboutus'><li>
+                                <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About Us</a>
+                            </li></Link>
+                            <Link to='/community'> <li>
+                                <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Community</a>
+                            </li></Link>
+                           <Link to='/allstories'> <li>
+                                <a href="#" className="block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Blogs</a>
+                            </li></Link>
+                                            </ul>
+    </div>
+    )
+}
+</div>
+
+
+
+
+
+
+                    <div className="hidden items-center justify-between w-full md:flex md:w-auto md:order-1" id="navbar-user">
                         <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                             <Link to='/'><li>
                                 <a href="#" className="block py-2 px-3 md:hover:text-blue-700  rounded md:bg-transparent md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
