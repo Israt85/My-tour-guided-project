@@ -8,7 +8,7 @@ const useGuideT = () => {
     const {user,loading} = useAuth()
     const {data: isTourGuide, isPending: isGuideLoading} = useQuery({
         enabled: !loading && !!user?.email,
-        queryKey: [user?.email, 'tourguide'],
+        queryKey: ['tourguide'],
         queryFn: async()=>{
             const res = await axiosSecure.get(`/users/tourguide/${user?.email}
             `)

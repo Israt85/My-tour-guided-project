@@ -21,7 +21,13 @@ const AllPackage = () => {
             const wishlist ={
                 package : card?.name,
                 price : card?.price,
-                email: user?.email
+                email: user?.email,
+                description: card?.description,
+                location: card?.location,
+                tourType: card?.tourType,
+                img: card?.img
+
+
             }
             console.log('wishlist', wishlist);
             axiosPublic.post('/wishlist', wishlist)
@@ -54,15 +60,17 @@ const AllPackage = () => {
                 visible={true}
               /> </div> : tourPackage.map(tour=> <div key={tour._id}>
                      
-                     <div className="bg-white  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                     <div className="bg-white mx-16 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img className="relative rounded-t-lg w-full h-52" src={tour?.img} alt="" />
-                       <div onClick={()=>handleAddtoWishlist (tour)} className="w-full px-4 text-3xl -mt-48 ml-96 absolute">
+                      
+                      <div onClick={()=>handleAddtoWishlist (tour)} className="w-full px-4 text-3xl -mt-48 ml-96 absolute">
                            <GiSelfLove></GiSelfLove>
                         </div>
                         <div className="w-20 p-2 text-white mx-4 bg-black text-xl -mt-48 absolute">
                             $ {tour.price}
                         </div>
+                    
 
                     </a>
                     <div className="p-5">

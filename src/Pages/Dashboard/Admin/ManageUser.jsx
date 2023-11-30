@@ -1,13 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import useaxiosSecure from "../../../Hooks/useaxiosSecure";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
 
 const ManageUser = () => {
-    
+    const [disabled, setDisabled] = useState(false)
     const axiosSecure = useaxiosSecure()
-    const { data: users , refetch } = useQuery({
+    const { data: users, refetch } = useQuery({
         queryKey: ['userinfo'],
         queryFn: async () => {
             const res = await axiosSecure.get('/users')
@@ -15,7 +15,6 @@ const ManageUser = () => {
         }
 
     })
-
 
     const handledelete = (user) => {
         Swal.fire({
@@ -129,10 +128,24 @@ const ManageUser = () => {
 
 
                                         <div className="flex">
-              <button type="button" onClick={()=>handleMakeAdmin(user)} disabled={user.role === 'admin' || user.role === 'tour guide'} className="btn border p-2 bg-green-700 rounded-xl text-white" >Admin</button>
-              <button type="button" onClick={()=>handleMakeTourGuide(user)} className="border p-2 bg-green-700 rounded-xl text-white" disabled ={user.role === 'admin' || user.role === 'tour guide'}>Tour Guide</button>
-                
-              </div>
+                                            <button type="button" onClick={() => handleMakeAdmin(user)} className={`border p-2 rounded-xl text-white ${user.role === 'admin' || user.role === 'tour guide'
+                                                        ? 'bg-gray-400'
+                                                        : 'bg-green-700'
+                                                    }`}
+                                                    disabled={user.role === 'admin' || user.role === 'tour guide'} >Admin</button>
+                                            <button
+                                                type="button"
+                                                onClick={() => handleMakeTourGuide(user)}
+                                                className={`border p-2 rounded-xl text-white ${user.role === 'admin' || user.role === 'tour guide'
+                                                        ? 'bg-gray-400'
+                                                        : 'bg-green-700'
+                                                    }`}
+                                                disabled={user.role === 'admin' || user.role === 'tour guide'}
+                                            >
+                                                Tour Guide
+                                            </button>
+
+                                        </div>
                                     </td>
                                     <td className="px-6 py-4">
                                         <button onClick={() => handledelete(user)} href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>

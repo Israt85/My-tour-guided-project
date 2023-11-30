@@ -4,6 +4,7 @@ import useTours from "../../../Hooks/useTours";
 import useAuth from "../../../Hooks/useAuth";
 import useaxiosPublic from "../../../Hooks/useaxiosPublic";
 import { motion } from 'framer-motion';
+import Swal from "sweetalert2";
 
 
 
@@ -13,21 +14,37 @@ const OurPackage = () => {
   
    const axiosPublic = useaxiosPublic()
    const {user} = useAuth()
-    const handleAddtoWishlist = (card)=>{
-        if(user && user?.email){
-        
-            console.log(card);
-            const wishlist ={
-                package : card?.name,
-                price : card?.price,
-                email: user?.email
-            }
-            console.log('wishlist', wishlist);
-            axiosPublic.post('/wishlist', wishlist)
-            .then(res => console.log(res.data))
-          
+   const handleAddtoWishlist = (card)=>{
+    if(user && user?.email){
+    
+        console.log(card);
+        const wishlist ={
+            package : card?.name,
+            price : card?.price,
+            email: user?.email,
+            description: card?.description,
+            location: card?.location,
+            tourType: card?.tourType,
+            img: card?.img
+
+
         }
-    }
+        console.log('wishlist', wishlist);
+        axiosPublic.post('/wishlist', wishlist)
+        .then(res => {
+           if(res.data.insertedId){
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "successfully added this in your wishlist",
+                showConfirmButton: false,
+                timer: 1500
+              });
+           }
+      
+    })
+}
+}
 
 
 

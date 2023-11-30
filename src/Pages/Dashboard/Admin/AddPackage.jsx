@@ -14,7 +14,7 @@ const AddPackage = () => {
   } = useForm()
   const onSubmit = async(data) => {
     const packageRes = {
-      name: data.name,
+      tourType: data.name,
       img: data.url,
       tripTitle: data.trip,
       price:parseFloat(data.price),

@@ -23,6 +23,8 @@ import AssignTour from '../Pages/Dashboard/TourGuide/AssignTour';
 import GuideRoute from './GuideRoute';
 import AllStories from '../Pages/AllStories/AllStories';
 import TourTypeFilter from '../Pages/Home/TourType/TourTypeFilter';
+import VisitDetails from '../Components/VisitDetails';
+import TypeDetails from '../Components/typeDetails';
 
 const router = createBrowserRouter([
     {
@@ -62,11 +64,15 @@ const router = createBrowserRouter([
         },
         {
           path: '/list/:id',
-          element: <PackageDetails></PackageDetails>
+          element:<VisitDetails></VisitDetails>
         },
         {
           path: '/tour/:tourtype',
           element: <TourTypeFilter></TourTypeFilter>
+        },
+        {
+          path: '/type/:id',
+          element: <TypeDetails></TypeDetails>
         }
         
       ]

@@ -1,21 +1,16 @@
+import React from 'react';
+import useWish from '../Hooks/useWish';
+import { useParams } from 'react-router-dom';
 
-
-import { useParams } from "react-router-dom";
-import useTours from "../Hooks/useTours";
-import BookingForm from "./BookingForm";
-import useWish from "../Hooks/useWish";
-
-
-
-const TourSections = () => {
+const VisitDetails = () => {
     const {id} = useParams()
     console.log(id);
-    const [tours] = useTours()
+    // const [tours] = useTours()
     const [wishlist]= useWish()
-    console.log(tours);
+    console.log(wishlist);
     
 
-    const selectedTours = tours.find((tour) => (tour._id == id))
+    const selectedTours = wishlist.find((tour) => (tour._id == id))
 
 
     console.log(selectedTours);
@@ -23,7 +18,6 @@ const TourSections = () => {
     return (
         <div>
             <div className="my-10">
-            <h2 className="mx-6 text-3xl font-bold">Let's go for a tour on : {selectedTours?.name}</h2>
             <div className=" mx-6 flex items-center justify-between">
 
 
@@ -37,12 +31,9 @@ const TourSections = () => {
                 
               <img className="w-80 h-80" src={selectedTours?.img} alt="" />
             </div>
-        </div>
-
-         <BookingForm selectedTours={selectedTours}></BookingForm>
-       
-        </div>
+            </div>
+            </div>
     );
 };
 
-export default TourSections;
+export default VisitDetails;

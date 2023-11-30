@@ -2,7 +2,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import useAuth from "./useAuth";
 const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: 'https://tour-guided-server.vercel.app/'
 })
 
 const useAxiosSecure = () => {
@@ -21,8 +21,9 @@ const useAxiosSecure = () => {
     }, async(error)=>{
         const status = error.response.status
         if(status === 401 || status=== 403){
-            await userLogOut()
-            navigate('/login')
+           
+                await userLogOut();
+                navigate('/login');
         }
         return Promise.reject(error)
     })

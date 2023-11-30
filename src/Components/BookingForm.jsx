@@ -55,8 +55,8 @@ const BookingForm = ({selectedTours}) => {
         const res = await axiosPublic.post('/bookings', AllTours)
         if(res.data.insertedId){
           
-          if(bookings.length>3){
-             setCelebrate(true)
+          if (bookings.length + 1 > 3) {
+            setCelebrate(true);
              Swal.fire({
               title: "",
               text: "Congratulation You got a discount.Your Apply is Enable now!!",
@@ -71,11 +71,13 @@ const BookingForm = ({selectedTours}) => {
               }
             });
             reset()
+            return
             
           }
-          setTimeout(() => {
-                setCelebrate(false);
-              }, 10000)
+         else{
+          
+          setCelebrate(false);
+              
           Swal.fire({
             title: "",
             text: "You succesfully booked a tour!",
@@ -90,6 +92,7 @@ const BookingForm = ({selectedTours}) => {
             }
           });
           
+         }
          
         }
     }
@@ -148,7 +151,13 @@ const BookingForm = ({selectedTours}) => {
     </div>
   </div>
   <button onClick={()=>setCelebrate(true)}type="submit" className="text-white w-full bg-green-700 hover:bg-green-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-10 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Book Now
-  {celebrate && (
+  
+
+  
+  
+  </button>
+</form>
+{celebrate && (
   <Confetti
     width={window.innerWidth}   
      height={1500} 
@@ -157,11 +166,6 @@ const BookingForm = ({selectedTours}) => {
     recycle={false}
   />
 )}
-
-  
-  
-  </button>
-</form>
 
 
            </div>

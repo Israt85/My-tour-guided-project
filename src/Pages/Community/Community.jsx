@@ -1,8 +1,8 @@
 
 const Community = () => {
     return (
-        <div>
-            <h2>Community</h2>
+        <div className="w-full flex flex-col justify-center items-center min-h-sceen">
+            <h2 className="font-bold text-5xl">Coming sooon.....</h2>
         </div>
     );
 };
