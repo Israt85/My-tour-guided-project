@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { GiSelfLove } from "react-icons/gi";
 import useaxiosPublic from "../../Hooks/useaxiosPublic";
 import Swal from "sweetalert2";
+import { motion } from 'framer-motion';
 
 
 const AllPackage = () => {
@@ -60,7 +61,14 @@ const AllPackage = () => {
                 visible={true}
               /> </div> : tourPackage.map(tour=> <div key={tour._id}>
                      
-                     <div className="bg-white mx-16 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                     <motion.div
+      initial={{ opacity: 0, x: -100 }} 
+      animate={{ opacity: 10, x: 0 }}   
+      transition={{ duration: 2 }}    
+    >
+
+
+<div className="bg-white mx-16 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <img className="relative rounded-t-lg w-full h-52" src={tour?.img} alt="" />
                       
@@ -85,6 +93,10 @@ const AllPackage = () => {
                             </svg></button></Link>
                     </div>
                 </div>
+
+
+
+    </motion.div>
                 
                     
                     
