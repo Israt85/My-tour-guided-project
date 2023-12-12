@@ -25,6 +25,7 @@ import AllStories from '../Pages/AllStories/AllStories';
 import TourTypeFilter from '../Pages/Home/TourType/TourTypeFilter';
 import VisitDetails from '../Components/VisitDetails';
 import TypeDetails from '../Components/typeDetails';
+import Contact from '../Pages/Contact/Contact';
 
 const router = createBrowserRouter([
     {
@@ -42,7 +43,14 @@ const router = createBrowserRouter([
         {
             path: '/community',
             element: <Community></Community>
-        },{
+        },
+        {
+          path: '/contact',
+          element: <Contact></Contact>
+        },
+        
+        
+        {
           path: '/allpackage',
           element: <AllPackage></AllPackage>,
         },
