@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "pic": "https://i.ibb.co/YRDvhtX/linkedin-sales-solutions-p-At-A8xe-i-VM-unsplash.jpg",
+    "feedback": "I recently went on a tour package with your company and it was an amazing experience! The itinerary was well-planned, and I got to see all the must-visit attractions. The accommodations were comfortable, and the tour guides were knowledgeable and friendly. Overall, it was a fantastic trip and I would highly recommend your tour packages to anyone."
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "pic": "https://i.ibb.co/nsb4GcS/joseph-gonzalez-i-Fg-Rcq-Hznqg-unsplash.jpg",
+    "feedback": "My family and I had a wonderful time on the tour package we booked with your company. The package offered a great mix of sightseeing, cultural experiences, and leisure time. The transportation arrangements were smooth, and the guides provided insightful commentary throughout the trip. We felt safe and well taken care of. Thank you for a memorable vacation!"
+  },
+  {
+    "id": 3,
+    "name": "Michael Johnson",
+    "pic": "https://i.ibb.co/L0m5m9B/lethicia-matos-CSh-h-NHc3-Y8-unsplash.jpg",
+    "feedback": "I recently returned from a tour package organized by your company, and I must say it exceeded my expectations. The tour was well-organized, and the attractions visited were breathtaking. The accommodations were top-notch, and the tour guides were knowledgeable about the history and culture of the places we visited. I will definitely book another tour with your company in the future!"
+  },
+  {
+    "id": 4,
+    "name": "Emily Brown",
+    "pic": "https://i.ibb.co/Swtz8fJ/microsoft-365-7m-Bict-B-urk-unsplash.jpg",
+    "feedback": "I recently went on a tour package with your company, and it was an unforgettable experience. The itinerary was perfectly curated, allowing us to explore the highlights of each destination at a comfortable pace. The tour guides were passionate about their work and provided valuable insights. The accommodations were luxurious, and the transportation was hassle-free. Thank you for a fantastic vacation!"
+  },
+  {
+    "id": 5,
+    "name": "David Wilson",
+    "pic": "https://i.ibb.co/FqLCtF4/albert-dera-ILip77-Sbm-OE-unsplash.jpg",
+    "feedback": "I booked a tour package with your company for my honeymoon, and it was absolutely amazing! Everything from the romantic dinners to the stunning accommodations exceeded our expectations. The itinerary was well-balanced, allowing us to relax and explore the local culture. The tour guides were friendly and accommodating, making our trip truly special. Thank you for the unforgettable memories!"
+  }
+]

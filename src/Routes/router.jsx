@@ -26,6 +26,7 @@ import TourTypeFilter from '../Pages/Home/TourType/TourTypeFilter';
 import VisitDetails from '../Components/VisitDetails';
 import TypeDetails from '../Components/typeDetails';
 import Contact from '../Pages/Contact/Contact';
+import Pay from '../Components/Pay/Pay';
 
 const router = createBrowserRouter([
     {
@@ -81,7 +82,8 @@ const router = createBrowserRouter([
         {
           path: '/type/:id',
           element: <TypeDetails></TypeDetails>
-        }
+        }, 
+       
         
       ]
     },
@@ -108,6 +110,11 @@ const router = createBrowserRouter([
           path: 'mywishlist',
           element:<PrivateRoute><MyWishlist></MyWishlist></PrivateRoute>
         },
+        {
+          path: 'pay',
+          element: <PrivateRoute><Pay></Pay></PrivateRoute>
+     },
+       
 
         // admin
         {

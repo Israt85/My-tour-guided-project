@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Sundarbans",
+        "description": "The Sundarbans is the largest mangrove forest in the world and a UNESCO World Heritage Site. It is home to the Bengal tiger, numerous bird species, and diverse flora and fauna.",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSISF4wYcAjvqfX2ONMoAPAc9N5WS-c7gEWHWeiWhOufA&s"
+    },
+    {
+        "id": 2,
+        "name": "Cox's Bazar",
+        "description": "Cox's Bazar is the longest natural sea beach in the world, stretching over 120 kilometers along the southeastern coastline of Bangladesh. It is a popular tourist destination known for its sandy beaches and tranquil atmosphere.",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlckyP5ladVHx_eo8UkSMJXMJZlY10txiEdpJPaUqFog&s"
+    },
+    {
+        "id": 3,
+        "name": "Sajek Valley",
+        "description": "Sajek Valley is a picturesque hill station located in the Chittagong Hill Tracts region of Bangladesh. It is known for its lush green hills, breathtaking landscapes, and indigenous communities.",
+        "picture": "https://upload.wikimedia.org/wikipedia/commons/6/63/Beautiful_Sajek_Valley_by_Mahedi_Hassan.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Ratargul Swamp Forest",
+        "description": "Ratargul Swamp Forest is a freshwater swamp forest located in Sylhet Division, Bangladesh. It is known for its submerged trees during the monsoon season, creating a unique and surreal landscape.",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxDG5ZNg75X9F82RpsXKqtQ2qs8YN2r0CBLAd5SZSCVA&s"
+    },
+    {
+        "id": 5,
+        "name": "Saint Martin's Island",
+        "description": "Saint Martin's Island is a coral island in the Bay of Bengal, located off the coast of Cox's Bazar. It is renowned for its crystal-clear waters, coral reefs, and vibrant marine life, making it a popular destination for snorkeling and diving.",
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjfJcfFZtGv3gtP7QPU8jlk3VuBEJmK90EdMLyY13znQ&s"
+    },
+    {
+        "id": 6,
+        "name": "Lalbagh Fort",
+        "description": "Lalbagh Fort is a historic fortification located in the southwestern part of Dhaka, the capital city of Bangladesh. Built in the 17th century during the Mughal period, it is an architectural marvel with intricate designs and ornate structures.",
+        "picture": "https://www.tbsnews.net/sites/default/files/styles/big_3/public/images/2021/03/24/1516877813_8.jpg",
+        "pic":[ 
+            "https://i.ibb.co/LCZz7gk/paris.jpg",
+          "https://i.ibb.co/fYmVrCT/cityexplore.jpg"
+          
+
+        ]
+    }
+]

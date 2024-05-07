@@ -8,7 +8,7 @@ const StorySection = () => {
     console.log(story);
     return (
         <div className="my-10" >
-            <h2 className='my-2 text-center text-3xl text-green-700 italic'>See Our Story Section</h2>
+            <h2 className='my-2 text-center text-3xl text-green-700 italic'>See Our Story</h2>
             <div className=" mx-auto gap-4 grid grid-cols-1 md:grid-cols-2">
 
                 {

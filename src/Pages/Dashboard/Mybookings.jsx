@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import useBookings from '../../Hooks/useBookings';
 
 const Mybookings = () => {
@@ -58,7 +59,7 @@ const Mybookings = () => {
                                         </select>
                                     </td>
                                     <td className="px-6 py-4">
-                                        <button className='btn bg-green-600 px-2 py-1 rounded text-white'>pay</button>
+                                      <Link to='/dashboard/pay'>  <button className='btn bg-green-600 px-2 py-1 rounded text-white'>pay</button></Link>
                                         <button  className={`btn ${bookings.length>3 ?  'bg-blue-700 text-white': 'disabled'} $ my-2 p-2 rounded border`}
                                         
                                         >

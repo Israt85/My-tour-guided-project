@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import useaxiosPublic from "../../../Hooks/useaxiosPublic";
 import { Link } from "react-router-dom";
-import { MotionAnimate } from 'react-motion-animate';
+// import { MotionAnimate } from 'react-motion-animate';
 
 
 const MeetGuides = () => {
@@ -16,7 +16,7 @@ const MeetGuides = () => {
     },[axiosPublic])
     return (
         <div className="mx-10 my-10">
-            <MotionAnimate
+            {/* <MotionAnimate
                           variant={{
                             hidden: { opacity: 0.2, rotate: -180 },
                             show: {
@@ -29,20 +29,20 @@ const MeetGuides = () => {
                                 type: 'spring'
                               }
                             }
-                          }}>
+                          }}> */}
                           <h2 className="text-center font-nold text-green-700 text-3xl my-4">Here is Our famous Tour Guides...</h2>
-                        </MotionAnimate>
+                        {/* </MotionAnimate> */}
            {
              guides?.map(guide => <div key={guide._id}>
 
                 
-                <ul className="mx-auto divide-y w-full divide-gray-200 dark:divide-gray-700">
+                <ul className="w-98 divide-gray-200 dark:divide-gray-700">
                    <li className="pb-3 sm:pb-4">
-                      <div className="flex md:flex-row justify-center gap-10 items-center">
+                      <div className="flex md:flex-row justify-center gap-6 items-center">
                          <div className="bg-green-700 rounded-full p-2">
                             <img className="w-16 h-16 rounded-full" src={guide.img} alt="Neil image"/>
                          </div>
-                         <div className="">
+                         <div className="w-60">
                             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                               {guide.name}
                             </p>
@@ -61,10 +61,6 @@ const MeetGuides = () => {
                 
                             </div>)
            }
-           
-           
-          
-
         </div>
     );
 };

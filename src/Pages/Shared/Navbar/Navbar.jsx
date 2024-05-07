@@ -28,7 +28,7 @@ const Navbar = () => {
         <div >
 
 
-            <nav className="bg-green-900 text-white border-gray-200 dark:bg-gray-900">
+            <nav className="bg-green-900  text-white border-gray-200 dark:bg-gray-900">
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                     <a href="https://flowbite.com/" className="flex items-center space-x-3">
                         <img src={logo} className="h-8" alt="Flowbite Logo" />
