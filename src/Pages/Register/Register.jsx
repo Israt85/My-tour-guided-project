@@ -60,7 +60,7 @@ const Register = () => {
     }
 
     return (
-        <div>
+        <div className='h-screen bg-base-100'>
             <div>
             <h2 className='text-center my-6 text-green-700 font-extrabold text-2xl underline'>Register here.....</h2>
             <div className='flex my-10 justify-evenly items-center'>

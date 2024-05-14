@@ -38,11 +38,11 @@ const MeetGuides = () => {
                 
                 <ul className="w-98 divide-gray-200 dark:divide-gray-700">
                    <li className="pb-3 sm:pb-4">
-                      <div className="flex md:flex-row justify-center gap-6 items-center">
+                      <div className="flex flex-col md:flex-row justify-center gap-6 items-center">
                          <div className="bg-green-700 rounded-full p-2">
                             <img className="w-16 h-16 rounded-full" src={guide.img} alt="Neil image"/>
                          </div>
-                         <div className="w-60">
+                         <div className="lg:w-60">
                             <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
                               {guide.name}
                             </p>

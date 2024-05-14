@@ -18,7 +18,7 @@ const PopularPlaces = () => {
         <div className="my-10 p-6">
            <h2 className='my-2 text-center text-3xl text-green-700 italic'>Popular Places...</h2>
 
-<div className="grid grid-cols-3 gap-4">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
 {
     places?.map((place,idx)=> <div key={place?.id} className="w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
@@ -29,7 +29,7 @@ const PopularPlaces = () => {
             
             </label>
 
-{/* Put this part before </body> tag */}
+
 <input type="checkbox" id={`my_modal_${idx}` }className="modal-toggle" />
 <div className="modal" role="dialog">
   <div className="modal-box">

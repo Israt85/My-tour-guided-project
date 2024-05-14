@@ -24,9 +24,9 @@ const Testimonial = () => {
 
             <SeeFeedback feedbacks={selectedFeedback} />
 
-            <div className='grid grid-cols-5'>
+            <div className='grid grid-cols-2 lg:grid-cols-5 gap-2'>
                 {feedbacks.map(feedback => (
-                    <div key={feedback.id} className='my-10 h-40 border w-60 rounded-tl-3xl rounded-br-3xl mx-auto bg-green-700' onClick={() => handleTestimonialClick(feedback)}>
+                    <div key={feedback.id} className='my-10 h-40 border w-52 rounded-tl-3xl rounded-br-3xl mx-auto bg-green-600' onClick={() => handleTestimonialClick(feedback)}>
                         <img className="w-32 h-32 relative mx-auto bottom-12 rounded-full" src={feedback?.pic}alt="profile picture" />
                         <div className='relative bottom-10'>
                             <p className="text-center text-white">{feedback.name}</p>

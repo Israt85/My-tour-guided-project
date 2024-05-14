@@ -8,7 +8,7 @@ const SeeFeedback = ({feedbacks}) => {
 
     return (
         <div>
-        <div className='my-10 h-auto border w-2/3 rounded-tl-3xl rounded-br-3xl mx-auto bg-green-700'>
+        <div className='my-10 h-auto border w-2/3 rounded-tl-3xl rounded-br-3xl mx-auto bg-green-600'>
             {
                 feedbacks? <img className="w-40 h-40 relative mx-auto bottom-16 rounded-full" src={feedbacks?.pic} alt="profile picture"/> : <img className="w-40 h-40 relative mx-auto bottom-16 rounded-full" src={profileimg} alt="profile picture"/>
             }
@@ -36,7 +36,7 @@ const SeeFeedback = ({feedbacks}) => {
              </div>
              <blockquote>
                {
-                feedbacks?   <p className="text-2xl text-center font-semibold  text-white">{feedbacks?.feedback}</p> :   <p className="text-2xl text-center font-semibold  text-white">.....</p>
+                feedbacks?   <p className="text-2xl p-2 text-center font-semibold  text-white">{feedbacks?.feedback}</p> :   <p className="text-2xl text-center font-semibold  text-white">.....</p>
                }
              </blockquote>
              

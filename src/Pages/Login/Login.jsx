@@ -31,10 +31,10 @@ const Login = () => {
 
     return (
 
-        <div>
+        <div className='h-screen bg-base-100'>
             <h2 className='text-center my-6 text-green-700 font-extrabold text-2xl underline'>Login here.....</h2>
             <div className='flex my-10 justify-evenly items-center'>
-                <div className='w-80 px-4 rounded-md py-10 bg-slate-300 h-[400px]' >
+                <div className='w-80 px-4 rounded-md py-10 bg-slate-300 h-full' >
 
 
                     <form onSubmit={handleSubmit(onSubmit)} className=" mx-auto">
