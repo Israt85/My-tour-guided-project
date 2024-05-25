@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import emailjs from '@emailjs/browser';
+import GoogleMap from "./GoogleMap";
 
 
 const Contact = () => {
@@ -15,7 +16,11 @@ const Contact = () => {
             });
     };
     return (
-        <div id='contact' className='w-full'>
+       <div>
+        <div>
+            <GoogleMap/>
+        </div>
+         <div id='contact' className='w-full'>
             <h2 className='text-2xl text-center py-4'>Get In Touch</h2>
 
             <div className="h-auto ">
@@ -50,6 +55,7 @@ const Contact = () => {
                 </div>
             </div>
         </div>
+       </div>
     );
 };
 
