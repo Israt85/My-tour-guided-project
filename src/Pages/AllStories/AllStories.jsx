@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import useStory from "../../Hooks/useStory";
-import { motion } from 'framer-motion';
+import { calcLength, motion } from 'framer-motion';
 
 
 const AllStories = () => {
     const [story] = useStory()
+    console.log(story)
     return (
         <div className="my-10" >
             <h2 className='my-2 text-center text-3xl text-green-700 italic'>See Our Story</h2>
