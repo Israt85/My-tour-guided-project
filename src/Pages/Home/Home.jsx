@@ -9,7 +9,7 @@ import TourType from "./TourType/TourType";
 
 const Home = () => {
     return (
-        <div>
+        <div className="overflow-hidden">
             <Slider></Slider>
             <TouristTab></TouristTab>
             <PopularPlaces></PopularPlaces>

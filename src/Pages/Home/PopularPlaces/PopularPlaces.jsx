@@ -18,7 +18,7 @@ const PopularPlaces = () => {
         <div className="my-10 p-6">
            <h2 className='my-2 text-center text-3xl text-green-700 italic'>Popular Places...</h2>
 
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div className="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 mx-12">
 {
     places?.map((place,idx)=> <div key={place?.id} className="w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
     <a href="#">
@@ -52,7 +52,6 @@ const PopularPlaces = () => {
         <a href="#">
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{place?.name}</h5>
         </a>
-        {/* <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{place?.description}</p> */}
 
     </div>
 </div>)
